@@ -1,3 +1,9 @@
+Name : Chetan Salmota
+PRN : 0120180135
+Roll No : SCETTY142
+
+
+
 C:\Users\CHETAN\Desktop>python chatbot.py
 - Bot : Hello! Human. Lets chat and discuss. 
 - You : hey bot
@@ -12,12 +18,7 @@ C:\Users\CHETAN\Desktop>python chatbot.py
 - You : ok lets talk
 - Bot : Its weird to call you Human. Can I call by your real name ? 
 - You : Chetan
-Name : Chetan Salmota
-PRN : 0120180135
-Roll No : SCETTY142
-
-
-- Bot : ok Human 
+- Bot : ok chetan 
 - Bot : Lets Play a Rapid Fire Game. First I will ask then you can I you wish 
 - You : ok
 - Bot : Lets Start. 
@@ -32,7 +33,6 @@ Roll No : SCETTY142
 - Bot : Development or Problem Solving 
 - You : development
 - Bot : Cricket or Football 
-- Bot : Write again 
 - You : cricket
 - Bot : What if someone pays you to do murder of a murderer 
 - You : still a crime so no
@@ -47,5 +47,6 @@ Roll No : SCETTY142
 - Bot : chetan
 - You : bye
 ----------- Summary ------------
-Instered in :  None
-Language :  None
+Name of the user : chetan
+Instered in :  development
+Language :  java
