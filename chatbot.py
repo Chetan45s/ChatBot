@@ -5,18 +5,17 @@ import random
 neg = ['bad','sad','depressed','stressed','stress','depress']
 stoppers = ['yeah','ok','fine','yep','yes']
 pos = ['good','happy','cool','fine']
-greeting_r = ['how are you','what about you','and you','you']
 bye = ['bye','See you later']
-excitment = ['excit','exicted']
-
+no = ['no','nope','nothing']
+hey = ['hey','hi','hello']
 dataset = {'Oh! Its not good then':neg,'Cool!':pos}
 
 first = ['bollywood','hollywood']
 second = ['java','c++','python','js','javascript']
-third = ['development','problem solving']
+third = ['development','problem']
 forth = ['cricket','football']
 
-weird = ['Write properly','Write again','Check again']
+weird = ['Write properly','Write again','Check again','spell it properly']
 
 def is_valid(data,db):
     while data not in db:
@@ -53,7 +52,7 @@ def write(response):
         store += out + " "
         stdout.write("\r%s" % store)
         stdout.flush()
-        sleep(0.1)
+        sleep(0.3)
     stdout.write("\n")
 
 def check_stoppers(response):
@@ -66,13 +65,15 @@ def check_stoppers(response):
 def neg_discuss(word):
     word_phrase = f"Why are you feeling so {word}. Anything happened ?"
     write(word_phrase)
-    read()
-    write("Oh! Its not good then")
-    read()
-    word_phrase = f"For avoiding {word} feeling I suggest you to take some meditation"
+    user = read()
+    if user[0] not in no:
+        write("Oh! Its not good then")
+        read()
+    word_phrase = f"For avoiding {word} feeling I suggest you to take some meditation\n.\n."
     write(word_phrase)
     write("Leave this and lets talk about you")
-    read()
+    user = read()
+    is_valid(user[0],stoppers)  
     Name,lang,interest,run = pos_discuss()
     return Name,lang,interest,run
 
@@ -95,7 +96,7 @@ def pos_discuss():
         write(f"ok {Name}")
 
     # here we start the game
-    write("Lets Play a Rapid Fire Game. First I will ask then you can I you wish")
+    write("Lets Play a Rapid Fire Game. First I will ask then you can If you wish")
     read()
     write("Lets Start.")
 
@@ -129,7 +130,8 @@ def pos_discuss():
 
 def main():
     write("Hello! Human. Lets chat and discuss.")
-    read()
+    user = read()
+    is_valid(user[0],hey)
     write("How are you ?")
     chat()
 
@@ -148,13 +150,17 @@ def chat():
                         else:
                             write("Sorry! I can't understand")
         if run:
-            write("Sorry! I can't understand. If you want to end this conversation you can just say bye")   
+            user = " ".join(user)
+            if user in bye:
+                break
+            else:
+                write("Sorry! I can't understand. If you want to end this conversation you can just say bye")   
         else:
-            print("----------- Summary ------------")
+            write("----------- Summary ------------")
             if Name is not "Human":
-                print(f"Name of the user : {Name}")
-            print("Instered in : ",interest)
-            print("Language : ", lang)
+                write(f"Name of the user : {Name}")
+            write(f"Instered in : {interest}")
+            write(f"Language : {lang}")
             return
     
 if __name__ == "__main__":
